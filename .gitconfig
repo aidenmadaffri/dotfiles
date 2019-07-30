@@ -1,0 +1,7 @@
+[user]
+	name = Aiden Madaffri
+	email = contact@aidenmadaffri.com
+[core]
+	autocrlf = input
+[credential]
+	helper = cache

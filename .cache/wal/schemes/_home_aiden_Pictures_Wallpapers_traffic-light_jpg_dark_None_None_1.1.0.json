@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/aiden/Pictures/Wallpapers/traffic-light.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0F1118",
+        "foreground": "#c5c7c5",
+        "cursor": "#c5c7c5"
+    },
+    "colors": {
+        "color0": "#0F1118",
+        "color1": "#324A57",
+        "color2": "#5D6362",
+        "color3": "#BB4830",
+        "color4": "#E6AA49",
+        "color5": "#4B788A",
+        "color6": "#66888F",
+        "color7": "#c5c7c5",
+        "color8": "#898b89",
+        "color9": "#324A57",
+        "color10": "#5D6362",
+        "color11": "#BB4830",
+        "color12": "#E6AA49",
+        "color13": "#4B788A",
+        "color14": "#66888F",
+        "color15": "#c5c7c5"
+    }
+}

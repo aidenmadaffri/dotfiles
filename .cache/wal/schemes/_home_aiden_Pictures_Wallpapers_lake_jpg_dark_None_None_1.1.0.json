@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/aiden/Pictures/Wallpapers/lake.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0d0f",
+        "foreground": "#dedbd1",
+        "cursor": "#dedbd1"
+    },
+    "colors": {
+        "color0": "#0c0d0f",
+        "color1": "#956A5E",
+        "color2": "#BF8D77",
+        "color3": "#6C7887",
+        "color4": "#68ACA8",
+        "color5": "#A09A9E",
+        "color6": "#D4AFA9",
+        "color7": "#dedbd1",
+        "color8": "#9b9992",
+        "color9": "#956A5E",
+        "color10": "#BF8D77",
+        "color11": "#6C7887",
+        "color12": "#68ACA8",
+        "color13": "#A09A9E",
+        "color14": "#D4AFA9",
+        "color15": "#dedbd1"
+    }
+}

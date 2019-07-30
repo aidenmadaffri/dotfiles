@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/aiden/Pictures/Wallpapers/wallpaper.png"
+let background = "#1f212a"
+let foreground = "#d1bdee"
+let cursor     = "#d1bdee"
+
+" Colors
+let color0  = "#1f212a"
+let color1  = "#4DE275"
+let color2  = "#626688"
+let color3  = "#A36EB0"
+let color4  = "#DC6DB0"
+let color5  = "#68A2B4"
+let color6  = "#7CCADD"
+let color7  = "#d1bdee"
+let color8  = "#9284a6"
+let color9  = "#4DE275"
+let color10 = "#626688"
+let color11 = "#A36EB0"
+let color12 = "#DC6DB0"
+let color13 = "#68A2B4"
+let color14 = "#7CCADD"
+let color15 = "#d1bdee"

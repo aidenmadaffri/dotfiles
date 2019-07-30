@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/aiden/Pictures/Wallpapers/wallpaper.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1f212a",
+        "foreground": "#d1bdee",
+        "cursor": "#d1bdee"
+    },
+    "colors": {
+        "color0": "#1f212a",
+        "color1": "#30ff67",
+        "color2": "#0018ea",
+        "color3": "#d21fff",
+        "color4": "#fe4ab7",
+        "color5": "#1dc9ff",
+        "color6": "#5adeff",
+        "color7": "#d1bdee",
+        "color8": "#9284a6",
+        "color9": "#30ff67",
+        "color10": "#0018ea",
+        "color11": "#d21fff",
+        "color12": "#fe4ab7",
+        "color13": "#1dc9ff",
+        "color14": "#5adeff",
+        "color15": "#d1bdee"
+    }
+}
