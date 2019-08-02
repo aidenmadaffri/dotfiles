@@ -75,7 +75,7 @@ font-6 = unifont:size=12;3
 modules-left = i3
 modules-center = player-mpris-simple
 #modules-right = arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 arch-aur-updates arrow6 date powermenu
-modules-right = memory sep cpu sep pavolume sep arch-aur-updates sep date
+modules-right = wireless-network sep memory sep cpu sep battery sep pavolume sep arch-aur-updates sep date
 
 separator = 
 
@@ -282,44 +282,105 @@ bar-empty = ─
 ################################################################################
 
 [module/battery]
-;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
+
+full-at = 98
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
 battery = BAT0
-adapter = AC0
-full-at = 100
+adapter = AC
 
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
 format-charging = <animation-charging> <label-charging>
-label-charging =  %percentage%%
-format-charging-foreground = ${colors.foreground}
-format-charging-background = ${colors.background}
-format-charging-underline = #a3c725
 
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging =  %percentage%%
-format-discharging-underline = #c7ae25
-format-discharging-foreground = ${colors.foreground}
-format-discharging-background = ${colors.background}
 
-format-full-prefix = " "
-format-full-prefix-foreground = #a3c725
-format-full-underline = #a3c725
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <ramp-capacity> <label-full>
 
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw% (unreleased)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage:2%%
+
+label-charging-foreground = #A3BE8C
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw% (unreleased)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage:2%%
+
+label-discharging-foreground = #EBCB8B
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw% (unreleased)
+label-full = %percentage:2%%
+label-full-foreground = #EBCB8B
+
+; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = #c7ae25
+ramp-capacity-foreground = #EBCB8B
 
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = #a3c725
+animation-charging-foreground = #A3BE8C
+; Framerate in milliseconds
 animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-foreground = #EBCB8B
+; Framerate in milliseconds
+animation-discharging-framerate = 500
 
 ################################################################################
 
@@ -975,42 +1036,26 @@ label-disconnected-foreground = ${colors.foreground}
 ################################################################################
 
 [module/wireless-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp3s0
-interval = 3.0
+interface = wlp2s0
+
 label-connected = %essid%
-
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
+format-connected = <ramp-signal>
+label-connected-foreground = #4DE275
 
 format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
+label-disconnected = "%{A1:networkmanager_dmenu:}Not connected%{A}"
+label-disconnected-foreground = #BF616A
 
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+ramp-signal-foreground = #A3BE8C
+ramp-signal-0 = "%{A1:networkmanager_dmenu:}%{A}"
+ramp-signal-1 = "%{A1:networkmanager_dmenu:}%{A}"
+ramp-signal-2 = "%{A1:networkmanager_dmenu:}%{A}"
+ramp-signal-3 = "%{A1:networkmanager_dmenu:}%{A}"
+ramp-signal-4 = "%{A1:networkmanager_dmenu:}bf616a%{A}"
+ramp-signal-5 = "%{A1:networkmanager_dmenu:}%{A}"
+
+click-left = /usr/bin/networkmanager_dmenu
 
 ################################################################################
 
