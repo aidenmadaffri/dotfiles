@@ -8,7 +8,7 @@ sleep 0.1
 echo rgb 000000 > /dev/input/ckb1/cmd
 
 # lock the screen
-/home/aiden/.scripts/i3lock-fancy-rapid 20 20 -n
+/home/aiden/.scripts/lock.sh
 
 echo idle > /dev/input/ckb1/cmd
 
