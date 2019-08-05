@@ -16,3 +16,4 @@ exec --no-startup-id redshift
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset r rate 345 30
 exec_always --no-startup-id numlockx on
+exec --no-startup-id /usr/lib/kdeconnectd
