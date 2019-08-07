@@ -1,6 +1,6 @@
 #!/bin/bash
 i3lock -enlki ~/Pictures/Wallpapers/wallpaper-lock.png \
---radius 110 \
+--radius 115 \
 --line-uses-inside \
 --insidecolor=1f212add \
 --insidevercolor=626688dd \
@@ -14,6 +14,6 @@ i3lock -enlki ~/Pictures/Wallpapers/wallpaper-lock.png \
 --verifcolor=68a2b4ff \
 --timecolor=d1bdeeff \
 --datecolor=d1bdeeff \
---timestr="%l:%M:%S %p" \
+--timestr="%l:%M %p" \
 --datestr="%A, %B %d, %Y" \
 --indicator 
