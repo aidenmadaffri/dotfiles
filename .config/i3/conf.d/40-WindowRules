@@ -6,6 +6,7 @@
 assign [class="Thunderbird"] $ws4
 assign [class="discord"] $ws4
 assign [class="pulse-sms"] $ws4
+assign [class="electron-mail"] $ws4
 assign [class="Steam"] $ws3
 
 # Open specific applications in floating mode

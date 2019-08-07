@@ -1,10 +1,13 @@
 #!/bin/bash
 killall Discord
-sleep 0.5
+killall electron-mail
+sleep 2.5
 killall Discord
 killall thunderbird
 killall pulse-sms
-sleep 2.5
+killall electron-mail
+sleep 5
 thunderbird & disown
 pulse-sms & disown
 discord & disown
+electron-mail & disown
