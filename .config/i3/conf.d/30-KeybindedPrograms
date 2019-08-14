@@ -10,3 +10,4 @@ bindsym $mod+Shift+F2 exec gksu thunar
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 bindsym Print exec "bash /home/aiden/.scripts/screenshot.sh"
+bindsym Ctrl+Shift+Escape exec --no-startup-id lxtask
