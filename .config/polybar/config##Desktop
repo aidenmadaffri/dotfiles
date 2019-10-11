@@ -72,7 +72,7 @@ font-5 = "PowerlineSymbols:style=Medium:pixelsize=14;3"
 font-6 = unifont:size=12;3
 
 modules-left = i3
-modules-center = player-mpris-simple
+modules-center = spotify
 #modules-right = arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 arch-aur-updates arrow6 date powermenu
 modules-right = memory sep cpu sep pavolume sep arch-aur-updates sep date
 
@@ -824,7 +824,7 @@ interval = 1
 format-prefix = " "
 format = <label>
 exec = python ~/.config/polybar/scripts/spotify_status.py -f '{song} - {artist}'
-format-underline = #1db954
+format-underline = #4DE275
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 

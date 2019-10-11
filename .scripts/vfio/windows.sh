@@ -65,6 +65,13 @@ echo $audiobusid > /sys/bus/pci/drivers/vfio-pci/bind
 echo $audioid > /sys/bus/pci/drivers/vfio-pci/remove_id
 #sleep 1
 
+echo "Detaching NVME"
+echo $nvmeid > /sys/bus/pci/drivers/vfio-pci/new_id
+echo $nvmebusid > /sys/bus/pci/devices/$nvmebusid/driver/unbind
+echo $nvmebusid > /sys/bus/pci/drivers/vfio-pci/bind
+echo $nvmeid > /sys/bus/pci/drivers/vfio-pci/remove_id
+#sleep 1
+
 
 # QEMU (VM) command
 echo "Starting QEMU"
@@ -77,6 +84,7 @@ qemu-system-x86_64 -runas aiden -enable-kvm \
     -smp cores=6,threads=2 \
     -device vfio-pci,host=$IOMMU_GPU,multifunction=on,romfile=$VBIOS \
     -device vfio-pci,host=$IOMMU_GPU_AUDIO \
+    -device vfio-pci,host=$IOMMU_NVME \
     -usb \
     -device usb-host,vendorid=0x1532,productid=0x0064 \
     -device usb-host,vendorid=0x1038,productid=0x1248 \

@@ -4,7 +4,7 @@ VM_USER=aiden
 ## IOMMU groups
 IOMMU_GPU="01:00.0"
 IOMMU_GPU_AUDIO="01:00.1"
-IOMMU_USB="00:14.0"
+IOMMU_NVME="02:00.0"
 
 ## For extracting the VBIOS
 VBIOS_EXTRACT_PATH=/mnt/hdd1/Images/patchedgtx1080.rom
@@ -18,10 +18,10 @@ VIRSH_GPU_AUDIO=pci_0000_01_00_1
 # PCI BUS ID
 videoid="10de 1b80"
 audioid="10de 10f0"
-usbid="8086 a2af"
+nvmeid="1cc1 8201"
 videobusid="0000:$IOMMU_GPU"
 audiobusid="0000:$IOMMU_GPU_AUDIO"
-usbbusid="0000:$IOMMU_USB"
+nvmebusid="0000:$IOMMU_NVME"
 
 ## QEMU options
 RAM=16G

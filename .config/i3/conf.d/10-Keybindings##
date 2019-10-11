@@ -12,11 +12,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.scripts/volumehandler.s
 bindsym XF86AudioMute exec --no-startup-id $HOME/.scripts/pavolume.sh --togmute # mute sound
 
 # Media Player Controls
-bindsym XF86AudioPlay exec playerctl -p clementine play-pause
-bindsym XF86AudioPause exec playerctl -p clementine play-pause
-bindsym XF86AudioNext exec playerctl -p clementine next
-bindsym XF86AudioPrev exec playerctl -p clementine previous
-bindsym XF86AudioStop exec playerctl -p clementine stop
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
+bindsym XF86AudioPause exec playerctl -p spotify play-pause
+bindsym XF86AudioNext exec playerctl -p spotify next
+bindsym XF86AudioPrev exec playerctl -p spotify previous
+bindsym XF86AudioStop exec playerctl -p spotify stop
 
 # change focus
 bindsym $mod+j focus left

@@ -100,7 +100,7 @@ try:
     artist = fix_string(metadata['xesam:artist'][0]) if metadata['xesam:artist'] else ''
     song = fix_string(metadata['xesam:title']) if metadata['xesam:title'] else ''
 
-    if not artist and not song:
+    if (not artist and not song) or status == "Paused":
         print('')
     else:
         if len(song) > trunclen:
