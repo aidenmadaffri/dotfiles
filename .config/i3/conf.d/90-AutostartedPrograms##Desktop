@@ -8,5 +8,5 @@ exec --no-startup-id i3-msg 'workspace $ws6; exec /usr/bin/termite'
 exec --no-startup-id i3-msg 'workspace $ws1'
 exec --no-startup-id i3-msg 'workspace $ws2'
 exec --no-startup-id nextcloud
-exec --no-startup-id sleep 10; clementine; playerctl pause
-for_window [class="Clementine"] move scratchpad
+exec --no-startup-id sleep 10; spotify; playerctl pause
+for_window [class="Spotify"] move scratchpad
