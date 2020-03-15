@@ -92,11 +92,9 @@ qemu-system-x86_64 -runas aiden -enable-kvm \
     -device usb-host,vendorid=0xb58e,productid=0x9e84 \
     -object input-linux,id=kbd,evdev=/dev/input/kbd,grab_all=on,repeat=on \
     -drive if=pflash,format=raw,readonly,file=$OVMF \
-    -drive media=cdrom,file=$VIRTIO,id=cd1,if=none \
-    -device ide-cd,bus=ide.1,drive=cd1 \
-    -device virtio-scsi-pci,id=scsi0 \
-    -device scsi-hd,bus=scsi0.0,drive=rootfs \
-    -drive id=rootfs,file=/dev/sdb,media=disk,format=raw,if=none &
+    #-device virtio-scsi-pci,id=scsi0 \
+    #-device scsi-hd,bus=scsi0.0,drive=rootfs \
+    #-drive id=rootfs,file=/dev/sdb,media=disk,format=raw,if=none &
     #    -mem-path /dev/hugepages
     #    -device ioh3420,id=root_port1,chassis=0,slot=0,bus=pcie.0 \
     #    -device vfio-pci,host=$IOMMU_GPU,id=hostdev1,bus=root_port1,addr=0x00,multifunction=on,romfile=$VBIOS \

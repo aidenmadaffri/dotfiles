@@ -14,5 +14,5 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id redshift
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id xset r rate 345 30
+exec --no-startup-id xset r rate 345 25
 exec_always --no-startup-id numlockx on

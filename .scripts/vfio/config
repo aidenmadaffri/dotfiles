@@ -46,7 +46,7 @@ VBIOS=/mnt/hdd1/Images/patchedgtx1080.rom
 
 ## Windows
 VIRTIO=/home/aiden/Downloads/virtio-win-0.1.171.iso
-WINDOWS_ISO=$IMAGES/win10.iso
+WINDOWS_ISO=/home/aiden/Downloads/win10.iso
 WINDOWS_IMG=$IMAGES/windows.qcow2
 OVMF=/usr/share/ovmf/x64/OVMF_CODE.fd
 OVMF_VARS=/usr/share/ovmf/x64/OVMF_VARS.fd
