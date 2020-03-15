@@ -1,5 +1,5 @@
 #!/bin/bash
-i3lock -enlki ~/Pictures/Wallpapers/wallpaper-lock.png \
+i3lock -enki ~/Pictures/Wallpapers/wallpaper-lock.png \
 --radius 115 \
 --line-uses-inside \
 --insidecolor=1f212add \
