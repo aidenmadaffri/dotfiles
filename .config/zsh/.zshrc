@@ -113,6 +113,9 @@ fi;
 # Disable weird globbing (*) behavior
 setopt nonomatch
 
+# Bring environment with sudo
+alias sudo='sudo '
+
 #Aliases
 alias ls="exa --header"
 alias mv="mv -i"
