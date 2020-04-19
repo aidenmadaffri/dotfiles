@@ -18,9 +18,6 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
-
-#Autostart X
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  #sleep 10
-  /usr/local/bin/startx &> /dev/null
-fi
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
