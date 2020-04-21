@@ -122,6 +122,8 @@ alias mv="mv -i"
 alias rm="rm -I"
 alias cp="cp -i"
 
+alias vim="nvim"
+
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000

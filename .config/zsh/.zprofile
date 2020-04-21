@@ -21,3 +21,4 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc

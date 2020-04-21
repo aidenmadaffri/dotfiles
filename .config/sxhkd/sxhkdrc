@@ -22,9 +22,13 @@ super + shift + p
 super + shift + F8
 	$XDG_CONFIG_HOME/polybar/launch.sh
 
-# program launcher
+# program launcher (TODO may want to put run modi back)
 super + r
-	rofi -show run
+	rofi -show drun -modi drun,calc -kb-mode-next Super+r
+
+# calculator
+super + alt + c
+	rofi -show calc -modi calc -no-show-match -no-sort
 
 # make sxhkd reload its configuration files:
 super + Escape

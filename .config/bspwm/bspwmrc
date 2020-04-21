@@ -24,7 +24,6 @@ bspc config paddingless_monocle       true
 
 bspc config focus_follows_pointer     true
 bspc config pointer_follows_monitor   true
-ignore_ewmh_focus                     true
 
 bspc config single_monocle            true
 
@@ -32,7 +31,7 @@ bspc config bottom_padding            23
 
 
 bspc rule -a discord desktop=4 follow=off focus=off
-bspc rule -a thunderbird desktop=4 follow=off focus=off
+bspc rule -a Thunderbird desktop=4 follow=off focus=off
 bspc rule -a startupterm1 desktop=5 follow=off focus=off
 bspc rule -a startupterm2 desktop=6 follow=off focus=off
 bspc rule -a Steam desktop=3 follow=off focus=off
@@ -45,6 +44,9 @@ bspc rule -a pavucontrol state=floating
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
+
+# Fix java applications behaving weirdly due to bspwm
+wmname LG3D
 	
 # Autostart
 startup_lock_file=/tmp/bspwm-startup.lock
