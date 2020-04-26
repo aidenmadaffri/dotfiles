@@ -3,6 +3,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export QT_QPA_PLATFORMTHEME=gtk2
+export EDITOR=nvim
 
 #Dotfiles Cleanup
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
@@ -21,4 +22,3 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc

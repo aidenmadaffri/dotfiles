@@ -39,7 +39,7 @@ bspc rule -a lutris desktop=3 follow=off focus=off
 bspc rule -a spotify desktop=Spotify follow=off focus=off
 bspc rule -a pavucontrol state=floating
 
-#bspc rule -a Gimp desktop='^8' state=floating follow=on 
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
@@ -47,7 +47,7 @@ bspc rule -a pavucontrol state=floating
 
 # Fix java applications behaving weirdly due to bspwm
 wmname LG3D
-	
+
 # Autostart
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
@@ -61,7 +61,6 @@ if [ ! -f $startup_lock_file ]; then
 	nextcloud --background &
 	$XDG_CONFIG_HOME/polybar/launch.sh &
 	$HOME/.scripts/bspwmsubscriber.sh &
-	discord &
 	steam &
 	thunderbird &
 	kitty --class startupterm1 &
@@ -70,7 +69,7 @@ if [ ! -f $startup_lock_file ]; then
 	bspc desktop -f Spotify
 	sleep 0.25
 	spotify &
-	sleep 0.5
+	sleep 2
 	bspc desktop -f 1
 	sleep 0.25
 	brave &
@@ -80,4 +79,5 @@ if [ ! -f $startup_lock_file ]; then
 	brave &
 	sleep 2
 	bspc desktop -f 1
+    discord &
 fi

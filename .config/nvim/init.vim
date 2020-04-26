@@ -11,6 +11,34 @@
 " `vim -u foo`).
 set nocompatible
 
+" Plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Declare the list of plugins.
+Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'sickill/vim-pasta'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" Colors
+set termguicolors
+set background=dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_palette = 'original'
+colorscheme gruvbox-material
+let g:lightline = {'colorscheme' : 'gruvbox_material'}
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -27,6 +55,9 @@ set number
 " jump up or down to a particular line, by {count}k to go up or {count}j to go
 " down.
 set relativenumber
+
+" Enable persistent undo
+set undofile
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -79,8 +110,42 @@ nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-" ...and in insert mode
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+" Set tab width
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" Set leader key to space
+let mapleader=" "
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Fix autocompletion
+set wildmode=longest,list,full
+
+" Misc settings
+set cursorline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Splits and Tabbed Files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow splitright
+
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+

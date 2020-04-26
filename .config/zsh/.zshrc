@@ -76,7 +76,11 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions fast-syntax-highlighting)
+plugins=(git vi-mode zsh-autosuggestions fast-syntax-highlighting)
+
+# Enable vim keybindings
+bindkey -v
+KEYTIMEOUT=1
 
 source $ZSH/oh-my-zsh.sh
 
