@@ -62,6 +62,10 @@ super + shift + e
 super + shift + d
 	$HOME/.scripts/screenoff.sh
 
+# Toggle Focus Mode
+super + shift + Delete
+    $HOME/.scripts/focusmode.sh
+
 #
 # bspwm hotkeys
 #
