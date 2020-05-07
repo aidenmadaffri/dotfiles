@@ -66,6 +66,7 @@ if [ ! -f $startup_lock_file ]; then
 	$HOME/.scripts/bspwmsubscriber.sh &
 	steam &
 	thunderbird &
+    rescuetime &
 	kitty --class startupterm1 &
 	kitty --class startupterm2 &
 	sleep 5
