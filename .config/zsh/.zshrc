@@ -76,11 +76,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions fast-syntax-highlighting)
-
-# Enable vim keybindings
-bindkey -v
-KEYTIMEOUT=1
+plugins=(git zsh-autosuggestions fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +123,7 @@ alias rm="rm -I"
 alias cp="cp -i"
 
 alias vim="nvim"
+# alias sudo="sudo -e"
 
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=10000

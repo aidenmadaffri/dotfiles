@@ -48,13 +48,8 @@ set shortmess+=I
 " Show line numbers.
 set number
 
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
-set relativenumber
+" Stay in center of screen
+set scrolloff=999
 
 " Enable persistent undo
 set undofile
@@ -128,6 +123,7 @@ set wildmode=longest,list,full
 
 " Misc settings
 set cursorline
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

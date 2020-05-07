@@ -48,6 +48,9 @@ bspc rule -a pavucontrol state=floating
 # Fix java applications behaving weirdly due to bspwm
 wmname LG3D
 
+# Possible steam fix
+bspc config external_rules_command ~/.config/bspwm/external_rules.sh
+
 # Autostart
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
