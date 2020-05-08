@@ -113,9 +113,6 @@ fi;
 # Disable weird globbing (*) behavior
 setopt nonomatch
 
-# Bring environment with sudo
-alias sudo='sudo '
-
 #Aliases
 alias ls="exa --header"
 alias mv="mv -i"
@@ -123,7 +120,14 @@ alias rm="rm -I"
 alias cp="cp -i"
 
 alias vim="nvim"
-# alias sudo="sudo -e"
+
+sudo() {
+    if [ "$1"  = "vim" ]; then
+        /bin/sudoedit $2
+    else
+        /bin/sudo "$@"
+    fi
+}
 
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=10000
