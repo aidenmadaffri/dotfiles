@@ -46,7 +46,7 @@ syntax on
 set shortmess+=I
 
 " Show line numbers.
-set number
+set number relativenumber
 
 " Stay in center of screen
 set scrolloff=999
