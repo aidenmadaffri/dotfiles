@@ -62,11 +62,11 @@ if [ ! -f $startup_lock_file ]; then
 	xautolock -time 15 -locker "/home/aiden/.scripts/screenoff.sh" &
 	protonmail-bridge --noninteractive &
 	nextcloud --background &
+    redshift &
 	$XDG_CONFIG_HOME/polybar/launch.sh &
 	$HOME/.scripts/bspwmsubscriber.sh &
 	steam &
 	thunderbird &
-    rescuetime &
 	kitty --class startupterm1 &
 	kitty --class startupterm2 &
 	sleep 5

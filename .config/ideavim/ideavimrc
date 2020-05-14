@@ -1,0 +1,8 @@
+source ~/.config/nvim/init.vim
+
+" Enable commenting out with gc / gcc
+set commentary
+
+" Set run keybinding
+map <Leader>r :action Run<CR>
+
