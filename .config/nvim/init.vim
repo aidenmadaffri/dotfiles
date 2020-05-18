@@ -22,10 +22,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'sickill/vim-pasta'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/vim-slash'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -119,7 +122,11 @@ let mapleader=" "
 autocmd BufWritePre * %s/\s\+$//e
 
 " Fix autocompletion
-set wildmode=longest,list,full
+set wildmenu "  =longest,list,full
+
+" Vimwiki settings
+let g:vimwiki_list = [{'path':'~/Documents/vimwiki'}]
+let g:vimwiki_folding = 'list'
 
 " Misc settings
 set cursorline
