@@ -1,7 +1,7 @@
 #!/bin/bash
 bspc subscribe | while read line; do
 	#Grab status of "Jellyfin" desktop
-	status=$(echo $line | rg -o '^.+([oOfF])Jellyfin.*$' -r '$1')
+	status=$(echo $line | rg -o '^.+([oOfF])Media.*$' -r '$1')
 	#If jellyfin is closed, return to original desktop configuration
 	if [ "$status" = "F" ] || [ "$status" = "f" ]
 	then

@@ -16,7 +16,7 @@ super + F2
 
 # jellyfin
 super + shift + p
-	$HOME/.scripts/jellyfindesktop.sh
+	$HOME/.scripts/mediadesktop.sh
 
 # restart polybar
 super + shift + F8
