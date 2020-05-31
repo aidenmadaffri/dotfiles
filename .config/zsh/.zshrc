@@ -120,6 +120,7 @@ alias rm="rm -I"
 alias cp="cp -i"
 
 alias vim="nvim"
+alias g="git"
 
 sudo() {
     if [ "$1"  = "vim" ]; then
@@ -128,6 +129,9 @@ sudo() {
         /bin/sudo "$@"
     fi
 }
+
+alias gitlog='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --branches'
+alias ex="aunpack"
 
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=10000

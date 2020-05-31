@@ -5,6 +5,6 @@ bspc subscribe | while read line; do
 	#If jellyfin is closed, return to original desktop configuration
 	if [ "$status" = "F" ] || [ "$status" = "f" ]
 	then
-		[ ! -f /tmp/new-desktop.lock ] && bspc desktop -f 1 && bspc monitor DP-2 -d 1 3 5 7 9
+		[ ! -f /tmp/new-desktop.lock ] && bspc desktop -f 1 && bspc monitor DP-2 -d 1 3 5 7 9 && xautolock -time 15 -locker "/home/aiden/.scripts/screenoff.sh" &
 	fi
 done

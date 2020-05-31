@@ -8,6 +8,7 @@ then
 	plexmediaplayer &
 	sleep 2
     bspc node -t fullscreen
+    killall xautolock
 	rm /tmp/new-desktop.lock
 else
 	bspc desktop -f Media

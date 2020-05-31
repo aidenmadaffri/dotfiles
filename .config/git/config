@@ -7,4 +7,18 @@
 [commit]
 	gpgsign = true
 [alias]
+    co = checkout
+    con = checkout -b
+    b = branch
+    s = status
+    a = add
+    m = merge
     cma = commit -a
+[merge]
+	tool = vimdiff3
+[mergetool]
+	path = nvim
+[diff]
+	tool = vimdiff3
+[difftool "vimdiff3"]
+	path = nvim
