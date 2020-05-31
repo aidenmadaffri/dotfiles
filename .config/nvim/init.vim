@@ -29,9 +29,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-slash'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Source specific plugin configs
+source ~/.config/nvim/plugins/coc.vim
 
 " Colors
 set termguicolors
@@ -40,7 +45,20 @@ let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
 let g:gruvbox_material_palette = 'original'
 colorscheme gruvbox-material
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
+" let g:lightline = {'colorscheme' : 'gruvbox_material'}
+let g:lightline = {
+  \ 'colorscheme': 'gruvbox_material',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'cocstatus': 'coc#status'
+  \ },
+  \ }
+
+" Use auocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Turn on syntax highlighting.
 syntax on
@@ -98,17 +116,6 @@ set mouse+=a
 " Use system clipboard
 set clipboard+=unnamedplus
 
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
-" Do this in normal mode...
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-
 " Set tab width
 set shiftwidth=4
 set tabstop=4
@@ -130,6 +137,8 @@ let g:vimwiki_folding = 'list'
 
 " Misc settings
 set cursorline
+filetype plugin on
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
