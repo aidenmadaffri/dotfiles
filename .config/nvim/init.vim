@@ -56,6 +56,7 @@ let g:lightline = {
   \   'cocstatus': 'coc#status'
   \ },
   \ }
+let g:python_highlight_all = 1
 
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
@@ -129,18 +130,25 @@ let mapleader=" "
 autocmd BufWritePre * %s/\s\+$//e
 
 " Fix autocompletion
-set wildmenu "  =longest,list,full
+set wildmenu
+set wildmode=longest,list,full
 
 " Vimwiki settings
 let g:vimwiki_list = [{'path':'~/Documents/vimwiki'}]
 let g:vimwiki_folding = 'list'
 
 " Misc settings
-set cursorline
+set cursorline " Highlights current line
+
 filetype plugin on
 filetype plugin indent on
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set sidescrolloff=3 " same thing but for horizontal wrapping
+
+" Mappings
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitbelow splitright
