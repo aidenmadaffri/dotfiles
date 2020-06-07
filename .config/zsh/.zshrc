@@ -120,6 +120,7 @@ alias rm="rm -I"
 alias cp="cp -i"
 
 alias vim="nvim"
+alias vimwiki="nvim -c VimwikiIndex"
 alias g="git"
 
 sudo() {
