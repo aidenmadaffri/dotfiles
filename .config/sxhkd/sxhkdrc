@@ -7,11 +7,11 @@ super + x
 	kitty
 
 # browser
-super + F1
-	brave
+super + b
+	$BROWSER
 
 # file browser
-super + F2
+super + d
 	thunar
 
 # jellyfin

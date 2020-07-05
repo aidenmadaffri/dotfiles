@@ -5,7 +5,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export QT_QPA_PLATFORMTHEME=gtk2
 export EDITOR=nvim
 export TERMINAL=kitty
-export BROWSER=brave
+export BROWSER=firefox
+export THEOS=$HOME/Applications/theos
 
 #Dotfiles Cleanup
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc

@@ -3,7 +3,7 @@ if [ -z $(bspc query -D --names | grep Media) ]
 then
 	touch /tmp/new-desktop.lock
 	#Create new desktop, switch to it, and launch jellyfin
-	bspc monitor DP-2 -d 1 3 5 7 9 Media
+	bspc monitor DP-2 -d 1 2 3 4 5 Media
 	bspc desktop -f Media
 	plexmediaplayer &
 	sleep 2

@@ -15,6 +15,7 @@ set nocompatible
 let g:coc_global_extensions = [
 \ 'coc-python',
 \ 'coc-yaml',
+\ 'coc-yank',
 \ 'coc-json'
 \ ]
 " Install if not present
@@ -48,6 +49,7 @@ call plug#end()
 
 " Source specific plugin configs
 source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/fzf.vim
 
 " Colors
 set termguicolors
@@ -150,6 +152,7 @@ let g:vimwiki_folding = 'list'
 
 " Misc settings
 set cursorline " Highlights current line
+set autoread
 
 filetype plugin on
 filetype plugin indent on
