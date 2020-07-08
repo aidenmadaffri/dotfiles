@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Created By Aditya Shakya
+
+MENU="$(echo -e " Lock\n Logout\n Reboot\n Shutdown" | dmenuopts)"
+            case "$MENU" in
+                *Lock) slock ;;
+                *Logout) killall dwm ;;
+                *Reboot) shutdown -r now ;;
+                *Shutdown) shutdown ;;
+esac

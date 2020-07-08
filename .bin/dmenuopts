@@ -1,0 +1,1 @@
+dmenu -i -fn 'JetBrainsMono Nerd Font:size=10' -nb '#1d2021' -nf '#d5c4a1' -sb '#4e5122' -sf '#d5c4a1'

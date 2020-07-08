@@ -1,0 +1,8 @@
+#!/bin/bash
+TIME=" $(date +%r)"
+DATE=" $(date +%F)"
+VOLUME="$(pavolume)"
+UPDATES=" $(cat /tmp/updates.txt)"
+notify-send -t 3000 "Status Information" \
+    "$TIME\n$DATE\n$VOLUME\n$UPDATES" \
+    -h string:x-canonical-private-synchronous:"Status Information"

@@ -52,6 +52,8 @@ function volUp {
     then
         volSync
     fi
+
+    statuscmd
 }
 
 function volDown {
@@ -69,6 +71,7 @@ function volDown {
         volSync
     fi
 
+    statuscmd
 }
 
 function getSinkInputs {
@@ -172,6 +175,7 @@ case "$1" in
         else
             volMute mute
         fi
+        statuscmd
         ;;
     --mute)
         volMute mute

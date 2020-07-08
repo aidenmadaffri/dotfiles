@@ -1,4 +1,5 @@
 #Global variables
+export PATH=/home/aiden/.bin:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
@@ -30,6 +31,6 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 #Autostart X
 if [ ! -f /tmp/Xorg.lock ]; then
     touch /tmp/Xorg.lock
-    /usr/local/bin/startx
+    $HOME/.bin/startx
 fi
 

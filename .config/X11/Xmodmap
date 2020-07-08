@@ -1,2 +1,4 @@
-clear Lock
-keycode 0x42 = Escape
+clear Mod4
+clear Mod3
+add Mod3 = Super_R
+add Mod4 = Super_L

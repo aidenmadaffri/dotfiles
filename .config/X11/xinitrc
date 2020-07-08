@@ -47,5 +47,4 @@ xset r rate 345 25
 xsetroot -cursor_name left_ptr
 
 wal -R
-numlockx &
-exec /usr/bin/bspwm
+exec dwm
