@@ -37,6 +37,9 @@ wmname LG3D
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+#Setup dbus
+export $(dbus-launch)
+
 #Fixes QT icons
 export DESKTOP_SESSION=gnome
 
