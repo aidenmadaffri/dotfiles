@@ -37,8 +37,8 @@ wmname LG3D
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-# Setup dbus for laptop
-if [ "$PC_TYPE" == "laptop" ]; then
+# Setup dbus for laptop (root does not have access to env variable)
+if grep -q "laptop" /home/aiden/.cache/identifier; then
     export $(dbus-launch)
 fi
 
