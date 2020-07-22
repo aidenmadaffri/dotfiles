@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$PC_TYPE" == "laptop" ]; then
+    slock &
+    sleep 0.5
+    sudo pm-suspend
+fi
