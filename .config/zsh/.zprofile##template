@@ -28,6 +28,9 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
+#Fix java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 #Monitor/Class Configuration
 {% if yadm.class == "desktop" %}
 export PC_TYPE="desktop"

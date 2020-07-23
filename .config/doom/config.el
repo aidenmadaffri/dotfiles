@@ -147,4 +147,11 @@
 (map! :leader
       :desc "Insert org-roam link" "o l" #'my-org-roam-insert)
 
+(setq real-auto-save-interval 5) ;; in seconds
+(add-hook 'org-mode-hook
+          (lambda ()
+            (when (s-prefix? (expand-file-name "~/Nextcloud/Documents/org/")
+                             (buffer-file-name (current-buffer)))
+              (real-auto-save-mode))))
+
 (setq display-line-numbers-type 'relative)
