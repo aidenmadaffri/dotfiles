@@ -27,6 +27,8 @@ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 
 #Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1

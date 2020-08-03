@@ -7,5 +7,5 @@ MENU="$(echo -e " Lock\n Logout\n Reboot\n Shutdown" | dmenuopts)"
                 *Lock) slock ;;
                 *Logout) killall dwm ;;
                 *Reboot) sudo reboot ;;
-                *Shutdown) sudo poweroff now ;;
+                *Shutdown) sudo shutdown now ;;
 esac
