@@ -122,6 +122,7 @@ alias cp="cp -i"
 alias vim="nvim"
 alias vimwiki="nvim -c VimwikiIndex"
 alias g="git"
+alias y="yadm"
 
 sudo() {
     if [ "$1"  = "vim" ]; then
