@@ -115,6 +115,14 @@ setopt nonomatch
 
 #Aliases
 alias ls="exa --header"
+
+# Changing "ls" to "exa"
+alias ls='exa -al --header --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --header --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --header --color=always --group-directories-first'  # long format
+alias lt='exa -aT --header --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+
 alias mv="mv -i"
 alias rm="rm -I"
 alias cp="cp -i"
