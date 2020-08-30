@@ -1,5 +1,8 @@
 #!/bin/bash
 nextcloud --background &
+killall emacs
+killall emacsclient
+emacs --daemon &
 if [ "$PC_TYPE" == "desktop" ]; then
     xss-lock -- slock &
     steam &
