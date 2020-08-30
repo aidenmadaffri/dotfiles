@@ -1,8 +1,12 @@
 (setq user-full-name "Aiden Madaffri"
       user-mail-address "contact@aidenmadaffri.com")
 
-(setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "NotoSans Nerd Font" :size 16))
+(when (equal (getenv "PC_TYPE") "desktop")
+    (setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 15)
+        doom-variable-pitch-font (font-spec :family "NotoSans Nerd Font" :size 16)))
+(when (equal (getenv "PC_TYPE") "laptop")
+    (setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 25)
+        doom-variable-pitch-font (font-spec :family "NotoSans Nerd Font" :size 26)))
 
 (setq doom-theme 'doom-gruvbox)
 (setq doom-gruvbox-dark-variant "hard")
