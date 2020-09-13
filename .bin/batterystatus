@@ -1,0 +1,54 @@
+#!/bin/bash
+CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+STATUS="$(cat /sys/class/power_supply/BAT0/status)"
+ICON=""
+if [ "$STATUS" == "Charging" ]; then
+    ICON=""
+fi
+if [ $CAPACITY -le 90 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 80 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 70 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 60 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 50 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 40 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 30 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 20 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+elif [ $CAPACITY -le 10 ]; then
+    ICON=""
+    if [ "$STATUS" == "Charging" ]; then
+        ICON=""
+    fi
+fi
+echo "$ICON ${CAPACITY}%"

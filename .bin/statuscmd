@@ -4,9 +4,7 @@ DATE=" $(date +%F)"
 VOLUME="$(pavolume)"
 UPDATES=" $(cat /tmp/updates.txt)"
 if [ "$PC_TYPE" == "laptop" ]; then
-    BATTERY_NOW=$(cat /sys/class/power_supply/BAT0/energy_now)
-    BATTERY_FULL=$(cat /sys/class/power_supply/BAT0/energy_full)
-    BATTERY=" $(awk "BEGIN {print "${BATTERY_NOW}.0/${BATTERY_FULL}.0*100}"" | xargs -0 printf '%.0f')%"
+    BATTERY=$(batterystatus)
     notify-send -t 3000 "Status Information" \
         "$TIME\n$DATE\n$VOLUME\n$BATTERY\n$UPDATES" \
         -h string:x-canonical-private-synchronous:"Status Information"
