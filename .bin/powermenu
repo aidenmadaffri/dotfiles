@@ -5,7 +5,7 @@
 MENU="$(echo -e " Lock\n Logout\n Reboot\n Shutdown" | dmenuopts)"
             case "$MENU" in
                 *Lock) slock ;;
-                *Logout) killall dwm ;;
-                *Reboot) sudo reboot ;;
-                *Shutdown) sudo shutdown now ;;
+                *Logout) rm /tmp/Xorg.lock && killall dwm ;;
+                *Reboot) rm /tmp/Xorg.lock && sudo reboot ;;
+                *Shutdown) rm /tmp/Xorg.locak && sudo shutdown now ;;
 esac
