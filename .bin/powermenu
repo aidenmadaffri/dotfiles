@@ -7,5 +7,5 @@ MENU="$(echo -e " Lock\n Logout\n Reboot\n Shutdown" | dmenuopts)"
                 *Lock) slock ;;
                 *Logout) rm /tmp/Xorg.lock && killall dwm ;;
                 *Reboot) rm /tmp/Xorg.lock && sudo reboot ;;
-                *Shutdown) rm /tmp/Xorg.locak && sudo shutdown now ;;
+                *Shutdown) rm /tmp/Xorg.lock && sudo shutdown now ;;
 esac
