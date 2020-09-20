@@ -132,6 +132,8 @@ alias vimwiki="nvim -c VimwikiIndex"
 alias g="git"
 alias y="yadm"
 
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+
 sudo() {
     if [ "$1"  = "vim" ]; then
         /bin/sudoedit $2
