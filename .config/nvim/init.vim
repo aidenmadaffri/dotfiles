@@ -43,6 +43,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-slash'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
+Plug 'lervag/vimtex'
+Plug 'liuchengxu/vim-which-key'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -149,6 +151,8 @@ set wildmode=longest,list,full
 " Vimwiki settings
 let g:vimwiki_list = [{'path':'~/Documents/vimwiki'}]
 let g:vimwiki_folding = 'list'
+
+let g:tex_flavor = 'latex'
 
 " Misc settings
 set cursorline " Highlights current line

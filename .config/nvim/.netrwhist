@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/aiden/.config/emacs/test'
+let g:netrw_dirhist_9='/home/aiden/Programming/Projects/Personal/gamerecs/gamerecs'
+let g:netrw_dirhist_8='/home/aiden/Drives'
+let g:netrw_dirhist_7='/tmp/android-messages-desktop/src'
+let g:netrw_dirhist_6='/home/aiden'
+let g:netrw_dirhist_5='/home/aiden/Applications'
+let g:netrw_dirhist_4='/home/aiden/Applications/dwm'
+let g:netrw_dirhist_3='/tmp/jellyfin-youtube-metadata-plugin/Jellyfin.Plugin.YoutubeMetadata/Providers'
+let g:netrw_dirhist_2='/tmp/jellyfin-youtube-metadata-plugin/Jellyfin.Plugin.YoutubeMetadata'
+let g:netrw_dirhist_1='/home/aiden/.config/sxhkd'
