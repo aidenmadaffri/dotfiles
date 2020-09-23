@@ -76,9 +76,6 @@ let g:python_highlight_all = 1
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
-" Turn on syntax highlighting.
-syntax on
-
 " Disable the default Vim startup message.
 set shortmess+=I
 
@@ -153,13 +150,12 @@ let g:vimwiki_list = [{'path':'~/Documents/vimwiki'}]
 let g:vimwiki_folding = 'list'
 
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_automatic = 0
 
 " Misc settings
 set cursorline " Highlights current line
 set autoread
-
-filetype plugin on
-filetype plugin indent on
 
 set sidescrolloff=3 " same thing but for horizontal wrapping
 
