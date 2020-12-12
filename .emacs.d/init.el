@@ -177,7 +177,7 @@
 	'("~/Documents/org/tasks.org"))
 
   (setq org-todo-keywords
-	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")))
+	'((sequence "TODO(t)" "NEXT(n)" "STRT(s)" "|" "DONE(d!)")))
 
   ;; Configure custom agenda views
   (setq org-agenda-custom-commands
