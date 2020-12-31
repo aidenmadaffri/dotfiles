@@ -1,7 +1,7 @@
 [user]
 	name = Aiden Madaffri
 	email = contact@aidenmadaffri.com
-	signingkey = 5439BA0EA2EB5137
+	signingkey = 8047E22710FBE9E3
 [core]
 	editor = nvim
 [commit]
@@ -23,4 +23,4 @@
 [difftool "vimdiff3"]
 	path = nvim
 [gpg]
-	program = gpg2
+	program = gpg
