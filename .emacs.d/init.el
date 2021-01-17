@@ -26,9 +26,9 @@
 
 (setq visible-bell t)       ; Enable the visual bell
 
-(set-face-attribute 'default nil :font "JetbrainsMono Nerd Font" :height 100)
-(set-face-attribute 'fixed-pitch nil :font "JetbrainsMono Nerd Font" :height 100)
-(set-face-attribute 'variable-pitch nil :font "NotoSans Nerd Font" :height 125)
+(set-face-attribute 'default nil :font "JetbrainsMono Nerd Font" :height 150)
+(set-face-attribute 'fixed-pitch nil :font "JetbrainsMono Nerd Font" :height 150)
+(set-face-attribute 'variable-pitch nil :font "NotoSans Nerd Font" :height 175)
 
 (setq display-line-numbers-type 'visual)
 (setq display-line-numbers-width-start t)
@@ -134,8 +134,8 @@
 
   (atm/leader-keys
     "o"  '(:ignore t :which-key "open")
-    "oo" '((lambda () (interactive) (counsel-find-file "~/Documents/org/")) :which-key "org files")
-    "ot" '((lambda () (interactive) (find-file "~/Documents/org/tasks.org")) :which-key "tasks")
+    "oo" '((lambda () (interactive) (counsel-find-file "~/docs/org/")) :which-key "org files")
+    "ot" '((lambda () (interactive) (find-file "~/docs/org/tasks.org")) :which-key "tasks")
     "oa" '((lambda () (interactive) (org-agenda nil "d")) :which-key "agenda")
     "oc" '((lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")) :which-key "config")
     "oq" '(org-capture :which-key "quick capture")
@@ -174,7 +174,7 @@
   (setq org-log-into-drawer t)
 
   (setq org-agenda-files
-	'("~/Documents/org/tasks.org"))
+	'("~/docs/org/tasks.org"))
 
   (setq org-todo-keywords
 	'((sequence "TODO(t)" "NEXT(n)" "STRT(s)" "|" "DONE(d!)")))
@@ -213,9 +213,9 @@
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 (setq org-capture-templates
-  `(("t" "Task" entry (file+olp "~/Documents/org/tasks.org" "Inbox")
+  `(("t" "Task" entry (file+olp "~/docs/org/tasks.org" "Inbox")
   "* TODO %?\nSCHEDULED: %t")
-    ("j" "Journal" entry (file+olp+datetree "~/Documents/org/journal.org")
+    ("j" "Journal" entry (file+olp+datetree "~/docs/org/journal.org")
         "\n* %<%I:%M %p> - Journal :journal:\n\nToday I am grateful %?\n\n"
         :clock-in :clock-resume)))
 
