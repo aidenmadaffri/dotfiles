@@ -26,15 +26,15 @@ My current setup uses package.el (default emacs package manager) and use-package
 ** Basic Settings
 These settings remove a lot of unneeded elements in the default appearance.
 #+begin_src emacs-lisp
-(setq inhibit-startup-message t)
-(scroll-bar-mode -1)        ; Disable visible scrollbar
-(tool-bar-mode -1)          ; Disable the toolbar
-(tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 10)        ; Give some breathing room
+  (setq inhibit-startup-message t)
+  (scroll-bar-mode -1)        ; Disable visible scrollbar
+  (tool-bar-mode -1)          ; Disable the toolbar
+  (tooltip-mode -1)           ; Disable tooltips
+  (set-fringe-mode 13)        ; Give some breathing room
 
-(menu-bar-mode -1)          ; Disable the menu bar
+  (menu-bar-mode -1)          ; Disable the menu bar
 
-(setq visible-bell t)       ; Enable the visual bell
+  (setq visible-bell t)       ; Enable the visual bell
 #+end_src
 ** Font Configuration
 The fonts I normally use are Jetbrains Mono for monospace and Noto Sans for everything else. I use Nerd Fonts to add more symbol compatibility.
@@ -131,6 +131,18 @@ This package allows more useful output in Emacs' help prompts.
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 #+end_src
+** Improved prompt sorting with prescient.el
+Sorts ivy completions based on usage.
+#+begin_src emacs-lisp
+(use-package ivy-prescient
+  :after counsel
+  :custom
+  (ivy-prescient-enable-filtering nil)
+  :config
+  ;; Uncomment the following line to have sorting remembered across sessions!
+  (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
+#+end_src
 * Keybinding Configuration
 ** Evil Mode
 I am a big fan of evil mode and vim keybindings, modal editing just makes sense to me. 
@@ -167,36 +179,34 @@ I am a big fan of evil mode and vim keybindings, modal editing just makes sense 
 ** Custom Keybindings
 I use general.el to configure all my personal keybindings.
 #+begin_src emacs-lisp
-(use-package general
-  :config
-  (general-create-definer atm/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
+  (use-package general
+    :config
+    (general-create-definer atm/leader-keys
+      :keymaps '(normal insert visual emacs)
+      :prefix "SPC"
+      :global-prefix "C-SPC")
 
-  (atm/leader-keys
-    "o"  '(:ignore t :which-key "open")
-    "oo" '((lambda () (interactive) (counsel-find-file "~/docs/org/")) :which-key "org files")
-    "ot" '((lambda () (interactive) (find-file "~/docs/org/tasks.org")) :which-key "tasks")
-    "oa" '((lambda () (interactive) (org-agenda nil "d")) :which-key "agenda")
-    "oc" '((lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")) :which-key "config")
-    "oq" '(org-capture :which-key "quick capture")
-    "m"  '(:ignore t :which-key "org")
-    "mt" '(org-todo :which-key "todo")))
+    (atm/leader-keys
+      "o"  '(:ignore t :which-key "open")
+      "oo" '((lambda () (interactive) (counsel-find-file "~/docs/org/")) :which-key "org files")
+      "ot" '((lambda () (interactive) (find-file "~/docs/org/tasks.org")) :which-key "tasks")
+      "oa" '((lambda () (interactive) (org-agenda nil "d")) :which-key "agenda")
+      "oc" '((lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")) :which-key "config")
+      "oq" '(org-capture :which-key "quick capture")
+      "m"  '(:ignore t :which-key "org")
+      "mt" '(org-todo :which-key "todo")
+      "p"  '(:keymap projectile-command-map :package projectile :which-key "projects")))
 #+end_src
 * Emacs Functionality 
-** Better Backups
-Improves backups and moves them to a separate directory.
+** Keep folders clean
+Moves all of emacs' random files to a single directory.
 #+begin_src emacs-lisp
-(setq
-    backup-directory-alist '(("." . "~/.cache/emacs/backups")) ;; Move backup files
-    backup-by-copying t     ; don't clobber symlinks
-    kept-new-versions 10    ; keep 10 latest versions
-    kept-old-versions 0     ; don't bother with old versions
-    delete-old-versions t   ; don't ask about deleting old versions
-    version-control t       ; number backups
-    vc-make-backup-files t) ; backup version controlled files
+(use-package no-littering)
 
+;; no-littering doesn't set this by default so we must place
+;; auto save files in the same path as it uses for sessions
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
 #+end_src
 ** Auto-saving
 I use super-save which will save files when I switch buffers or the frame loses focus
@@ -318,8 +328,6 @@ Allows project management and easier navigation between projects.
   :diminish projectile-mode
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
   :init
   ;; NOTE: Set this to the folder where you keep your Git repos!
   (when (file-directory-p "~/repo")

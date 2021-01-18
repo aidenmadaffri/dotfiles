@@ -20,7 +20,7 @@
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 10)        ; Give some breathing room
+(set-fringe-mode 13)        ; Give some breathing room
 
 (menu-bar-mode -1)          ; Disable the menu bar
 
@@ -96,6 +96,15 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
+(use-package ivy-prescient
+  :after counsel
+  :custom
+  (ivy-prescient-enable-filtering nil)
+  :config
+  ;; Uncomment the following line to have sorting remembered across sessions!
+  (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
+
 ;; Make ESC globally quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -140,16 +149,15 @@
     "oc" '((lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")) :which-key "config")
     "oq" '(org-capture :which-key "quick capture")
     "m"  '(:ignore t :which-key "org")
-    "mt" '(org-todo :which-key "todo")))
+    "mt" '(org-todo :which-key "todo")
+    "p"  '(:keymap projectile-command-map :package projectile :which-key "projects")))
 
-(setq
-    backup-directory-alist '(("." . "~/.cache/emacs/backups")) ;; Move backup files
-    backup-by-copying t     ; don't clobber symlinks
-    kept-new-versions 10    ; keep 10 latest versions
-    kept-old-versions 0     ; don't bother with old versions
-    delete-old-versions t   ; don't ask about deleting old versions
-    version-control t       ; number backups
-    vc-make-backup-files t) ; backup version controlled files
+(use-package no-littering)
+
+;; no-littering doesn't set this by default so we must place
+;; auto save files in the same path as it uses for sessions
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
 
 (use-package super-save
   :ensure t
@@ -239,8 +247,6 @@
   :diminish projectile-mode
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
   :init
   ;; NOTE: Set this to the folder where you keep your Git repos!
   (when (file-directory-p "~/repo")
