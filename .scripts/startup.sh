@@ -1,4 +1,5 @@
 # Clear spaces
+sleep 5
 yabai -m space 1 --destroy
 yabai -m space 2 --destroy
 yabai -m space 3 --destroy
@@ -19,6 +20,7 @@ yabai -m space 17 --destroy
 yabai -m space 18 --destroy
 yabai -m space 19 --destroy
 yabai -m space 10 --destroy
+sleep 0.5
 yabai -m space A1 --destroy
 yabai -m space A2 --destroy
 yabai -m space A3 --destroy
@@ -29,6 +31,7 @@ yabai -m space B2 --destroy
 yabai -m space B3 --destroy
 yabai -m space B4 --destroy
 yabai -m space B5 --destroy
+sleep 3
 
 # Create spaces
 yabai -m space --create
@@ -39,7 +42,7 @@ yabai -m space --create
 yabai -m space --create
 yabai -m space --create
 yabai -m space --create
-sleep 1
+sleep 3
 
 # Label spaces
 yabai -m space 1 --label A1
@@ -52,7 +55,7 @@ yabai -m space 7 --label B2
 yabai -m space 8 --label B3
 yabai -m space 9 --label B4
 yabai -m space 10 --label B5
-sleep 1
+sleep 3
 
 # Send spaces to correct displays
 yabai -m space A1 --display 1
