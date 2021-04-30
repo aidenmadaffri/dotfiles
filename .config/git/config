@@ -1,7 +1,7 @@
 [user]
 	name = Aiden Madaffri
 	email = contact@aidenmadaffri.com
-	signingkey = 8047E22710FBE9E3
+	signingkey = 5439BA0EA2EB5137
 [core]
 	editor = nvim
 [commit]
