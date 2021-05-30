@@ -1,72 +1,125 @@
 # Clear spaces
 sleep 5
-yabai -m space 1 --destroy
-yabai -m space 2 --destroy
-yabai -m space 3 --destroy
-yabai -m space 4 --destroy
-yabai -m space 5 --destroy
-yabai -m space 6 --destroy
-yabai -m space 7 --destroy
-yabai -m space 8 --destroy
-yabai -m space 9 --destroy
-yabai -m space 10 --destroy
-yabai -m space 11 --destroy
-yabai -m space 12 --destroy
-yabai -m space 13 --destroy
-yabai -m space 14 --destroy
-yabai -m space 15 --destroy
-yabai -m space 16 --destroy
-yabai -m space 17 --destroy
-yabai -m space 18 --destroy
+yabai -m space 20 --destroy
+sleep 0.1
 yabai -m space 19 --destroy
+sleep 0.1
+yabai -m space 18 --destroy
+sleep 0.1
+yabai -m space 17 --destroy
+sleep 0.1
+yabai -m space 16 --destroy
+sleep 0.1
+yabai -m space 15 --destroy
+sleep 0.1
+yabai -m space 14 --destroy
+sleep 0.1
+yabai -m space 13 --destroy
+sleep 0.1
+yabai -m space 12 --destroy
+sleep 0.1
+yabai -m space 11 --destroy
+sleep 0.1
 yabai -m space 10 --destroy
+sleep 0.1
+yabai -m space 9 --destroy
+sleep 0.1
+yabai -m space 8 --destroy
+sleep 0.1
+yabai -m space 7 --destroy
+sleep 0.1
+yabai -m space 6 --destroy
+sleep 0.1
+yabai -m space 5 --destroy
+sleep 0.1
+yabai -m space 4 --destroy
+sleep 0.1
+yabai -m space 3 --destroy
+sleep 0.1
+yabai -m space 2 --destroy
+sleep 0.1
+yabai -m space 1 --destroy
 sleep 0.5
 yabai -m space A1 --destroy
+sleep 0.1
 yabai -m space A2 --destroy
+sleep 0.1
 yabai -m space A3 --destroy
+sleep 0.1
 yabai -m space A4 --destroy
+sleep 0.1
 yabai -m space A5 --destroy
+sleep 0.1
 yabai -m space B1 --destroy
+sleep 0.1
 yabai -m space B2 --destroy
+sleep 0.1
 yabai -m space B3 --destroy
+sleep 0.1
 yabai -m space B4 --destroy
+sleep 0.1
 yabai -m space B5 --destroy
 sleep 3
 
 # Create spaces
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
+sleep 0.1
 yabai -m space --create
 sleep 3
 
 # Label spaces
 yabai -m space 1 --label A1
+sleep 0.1
 yabai -m space 2 --label B1
+sleep 0.1
 yabai -m space 3 --label A2
+sleep 0.1
 yabai -m space 4 --label A3
+sleep 0.1
 yabai -m space 5 --label A4
+sleep 0.1
 yabai -m space 6 --label A5
+sleep 0.1
 yabai -m space 7 --label B2
+sleep 0.1
 yabai -m space 8 --label B3
+sleep 0.1
 yabai -m space 9 --label B4
+sleep 0.1
 yabai -m space 10 --label B5
 sleep 3
 
 # Send spaces to correct displays
 yabai -m space A1 --display 1
+sleep 0.1
 yabai -m space A2 --display 1
+sleep 0.1
 yabai -m space A3 --display 1
+sleep 0.1
 yabai -m space A4 --display 1
+sleep 0.1
 yabai -m space A5 --display 1
+sleep 0.1
 yabai -m space B1 --display 2
+sleep 0.1
 yabai -m space B2 --display 2
+sleep 0.1
 yabai -m space B3 --display 2
+sleep 0.1
 yabai -m space B4 --display 2
+sleep 0.1
 yabai -m space B5 --display 2
 
 # Launch Applications
