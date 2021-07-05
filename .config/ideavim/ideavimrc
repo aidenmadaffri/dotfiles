@@ -4,5 +4,8 @@ source ~/.config/nvim/init.vim
 set commentary
 
 " Set run keybinding
-map <Leader>r :action Run<CR>
+map <Leader>rr <Action>(Run)
+map <leader>rs <Action>(Stop)
 
+" Set code actions
+map <Leader>ce <Action>(ExtractMethod)

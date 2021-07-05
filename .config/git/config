@@ -13,6 +13,7 @@
     s = status
     a = add
     m = merge
+    cm = commit
     cma = commit -a
 [merge]
 	tool = vimdiff3
@@ -24,3 +25,5 @@
 	path = nvim
 [gpg]
 	program = gpg
+[color]
+	ui = auto

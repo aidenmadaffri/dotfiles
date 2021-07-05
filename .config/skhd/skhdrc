@@ -46,6 +46,7 @@ shift + ctrl + alt - return : yabai -m window --toggle float
 ctrl + alt - x : osascript -e "tell application \"iTerm2\" to set newWindow to (create window with default profile)" # iTerm2
 shift + ctrl + alt - x : /Users/aiden/.scripts/emacs-starter.pl
 shift + ctrl + alt - p : open -n /Applications/Plex.app
+shift + ctrl + alt - g : open -n /Applications/Moonlight.app
 shift + ctrl + alt - a : open -n /Applications/Anki.app
 ctrl + alt - d : open ~ # Finder
 ctrl + alt - b : open -n /Applications/Google\ Chrome.app
