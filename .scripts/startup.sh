@@ -1,5 +1,5 @@
 # Clear spaces
-sleep 5
+sleep 1
 yabai -m space 20 --destroy
 sleep 0.1
 yabai -m space 19 --destroy
@@ -59,7 +59,56 @@ sleep 0.1
 yabai -m space B4 --destroy
 sleep 0.1
 yabai -m space B5 --destroy
-sleep 3
+sleep 1
+
+
+# Laptop
+if [ "$(hostname)" = "Aidens-MacBook-Pro.local" ]; then
+    # Create spaces
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 0.1
+    yabai -m space --create
+    sleep 3
+
+    # Label spaces
+    yabai -m space 1 --label A1
+    sleep 0.1
+    yabai -m space 2 --label A2
+    sleep 0.1
+    yabai -m space 3 --label A3
+    sleep 0.1
+    yabai -m space 4 --label A4
+    sleep 0.1
+    yabai -m space 5 --label A5
+    sleep 0.1
+    yabai -m space 6 --label B1
+    sleep 0.1
+    yabai -m space 7 --label B2
+    sleep 0.1
+    yabai -m space 8 --label B3
+    sleep 0.1
+    yabai -m space 9 --label B4
+    sleep 0.1
+    yabai -m space 10 --label B5
+    sleep 3
+    open -n /Applications/Google\ Chrome.app
+    open -n /Applications/iTerm.app
+    exit 0
+fi
 
 # Create spaces
 yabai -m space --create
@@ -100,6 +149,7 @@ yabai -m space 9 --label B4
 sleep 0.1
 yabai -m space 10 --label B5
 sleep 3
+
 
 # Send spaces to correct displays
 yabai -m space A1 --display 1
