@@ -1,7 +1,23 @@
-source ~/.config/nvim/init.vim
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
 " Enable commenting out with gc / gcc
 set commentary
+
+set surround
+
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+
+set ideajoin
+set ideamarks
 
 " Set run keybinding
 map <Leader>rr <Action>(Run)

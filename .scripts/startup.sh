@@ -182,7 +182,7 @@ osascript -e "tell application \"iTerm2\" to set newWindow to (create window wit
 sleep 0.5
 osascript -e "tell application \"iTerm2\" to set newWindow to (create window with default profile)" # iTerm2
 open -n /Applications/Discord.app
-open -n /Applications/Spark.app
+open -n /Applications/Microsoft Outlook.app
 sleep 5
 
 # Get ids of Applications
@@ -191,7 +191,7 @@ CHROME_B=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.
 TERM_A=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.name == "iTerm2").id' | head -n 1)
 TERM_B=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.name == "iTerm2").id' | tail -n 1)
 DISCORD=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.name == "Discord").id' | head -n 1)
-SPARK=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.name == "Spark").id' | head -n 1)
+OUTLOOK=$(yabai -m query --windows | jq '.[] | {id: .id, name: .app} | select(.name == "Microsoft Outlook").id' | head -n 1)
 
 # Move Applications
 yabai -m window $CHROME_A --space A1
@@ -199,4 +199,4 @@ yabai -m window $CHROME_B --space B1
 yabai -m window $TERM_A --space A3
 yabai -m window $TERM_B --space B3
 yabai -m window $DISCORD --space B2
-yabai -m window $SPARK --space A2
+yabai -m window $OUTLOOK --space A2
