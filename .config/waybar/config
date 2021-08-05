@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": ["custom/playerctl"],
+    "modules-right": ["tray", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%G-%m-%d %I:%M:%S %p}",
+        "interval": 1,
+        "on-click": "gnome-calendar",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "sway/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "謹",
+            "5": "謹",
+            "6": "",
+            "7": "&#8206;ﭮ&#8206;",
+            "8": "",
+            "9": "謹",
+            "10": "謹",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "1": ["DP-3"],
+            "2": ["DP-3"],
+            "3": ["DP-3"],
+            "4": ["DP-3"],
+            "5": ["DP-3"],
+            "6": ["HDMI-A-1"],
+            "7": ["HDMI-A-1"],
+            "8": ["HDMI-A-1"],
+            "9": ["HDMI-A-1"],
+            "10": ["HDMI-A-1"]
+        }
+    },
+    "custom/playerctl": {
+      "format": "  {}",
+      "max-length": 200,
+      "interval": 5,
+      "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+      "on-click": "playerctl play-pause",
+      "tooltip": false
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+        "show-passive-items": true
+    }
+}
